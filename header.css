@@ -1,0 +1,70 @@
+/* 桌面版 */
+@media (min-width: 768px) {
+    .main-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 40px;
+      max-width: 1920px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+  
+    .logo img {
+      height: 40px;
+    }
+  
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+  
+    .hamburger {
+      display: none; /* 桌面版隱藏漢堡選單 */
+    }
+  }
+  
+  /* 手機版 */
+  @media (max-width: 767px) {
+    .main-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 44px;
+      max-width: 375px;
+      margin: 0 auto;
+      padding: 0 10px;
+      position: relative;
+    }
+  
+    .logo img {
+      height: 32px;
+      max: width 137px;
+    }
+  
+    .nav-links {
+      display: none; /* 手機版預設隱藏 */
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background: #fff;
+      width: 100%;
+      text-align: right;
+      padding: 10px;
+    }
+  
+    .nav-links.show {
+      display: flex; /* 點擊漢堡選單時顯示 */
+    }
+  
+    .hamburger {
+      display: block; /* 手機版才顯示漢堡選單 */
+      font-size: 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+  }
+  
