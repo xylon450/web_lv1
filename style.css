@@ -1,0 +1,304 @@
+root {
+    --primary: #5A4DFF;
+    --text: #222;
+    --gray: #666;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background: #fff;
+    overflow-x: hidden;
+  }
+
+  /* Header */
+  header {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-container {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+  }
+
+  .logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary);
+  }
+
+  .main-nav a {
+    margin-left: 40px;
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  /* Hero */
+  .hero {
+    height: 380px;
+    background:
+    linear-gradient(90deg, rgba(0,0,0,.65), rgba(0,0,0,.25)),
+    /* IMAGE PLACEHOLDER */
+    url("https://github.com/hexschool/2022-web-layout-training/blob/main/2026-web-camp/blog_banner.png?raw=true.png");
+
+    display: flex;
+    align-items: center;
+    color: white;
+    position: relative;
+  }
+
+  .hero-content {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 40px;
+    width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 72px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .hero p {
+    font-size: 24px;
+    opacity: 0.95;
+  }
+
+  /* Layout */
+  .layout {
+    max-width: 1920px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 60px;
+    padding: 60px 40px;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    position: sticky;
+    top: 100px;
+    align-self: start;
+  }
+
+  .side-box {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 24px;
+  }
+
+  .side-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--primary);
+  }
+
+  .nav {
+    list-style: none;
+  }
+
+  .nav li {
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .nav li:hover,
+  .nav li.active {
+    color: var(--primary);
+    padding-left: 8px;
+  }
+
+  /* Content */
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .post {
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+
+  .post .media img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 16px;
+  }
+
+  .post .meta {
+    padding-top: 8px;
+  }
+
+  .tags {
+    color: var(--primary);
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .title {
+    font-size: 24px;
+    line-height: 1.4;
+    margin-bottom: 16px;
+    font-weight: 700;
+  }
+
+  .info-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .pill {
+    background: #f5f5f5;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 14px;
+    color: var(--gray);
+  }
+
+  /* Subscription */
+  .subscription {
+    background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+    color: white;
+    padding: 80px 40px;
+    margin-top: 60px;
+  }
+
+  .sub-content {
+    max-width: 1920px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .sub-left h2 {
+    font-size: 48px;
+    margin-bottom: 16px;
+  }
+
+  .sub-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 420px;
+  }
+
+  .sub-form input {
+    padding: 16px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+
+  .sub-form button {
+    background: var(--primary);
+    color: white;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  /* Footer */
+  footer {
+    background: #111;
+    color: #aaa;
+    padding: 60px 40px 30px;
+  }
+
+  .footer-content {
+    max-width: 1920px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+
+  /* Responsive */
+  @media (max-width: 420px){
+    /* 只針對footer，且不使用overflow:hidden在body/第一層div */
+    .footer{
+      overflow-x: clip;
+    }
+  
+    /* footer內所有容易溢出的區塊/子層 */
+    .footer *, .footer{
+      min-width: 0;
+    }
+  
+    /* 常見溢出點：input/textarea/button */
+    .footer input,
+    .footer textarea,
+    .footer button{
+      max-width: 100%;
+      width: 100%;
+      box-sizing: border-box;
+    }
+  
+    /* 避免字串不換行造成撐寬（例如placeholder/字串） */
+    .footer,
+    .footer *{
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      hyphens: auto;
+    }
+  
+    /* 避免外部容器預設寬度/計算造成 1~2px 溢出 */
+    .footer__inner{
+      width: 100%;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    /* 特別保護 grid：避免某些瀏覽器在窄版給 min-content 撐開 */
+    .footer__top,
+    .footer__bottom{
+      display: block; /* 針對375窄版避免grid的min-content怪狀 */
+      padding-left: 16px;
+      padding-right: 16px;
+      height: auto;
+    }
+  
+    /* 讓內容自然堆疊（仍維持你原本排版語意） */
+    .footer__top > *,
+    .footer__bottom > *{
+      width: 100%;
+    }
+  
+    /* image placeholder不要超寬 */
+    .image-blank{
+      max-width: 100%;
+    }
+  }

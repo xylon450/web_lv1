@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Footer RWD</title>
+  <style>
+    
+
+    /* =========================
+       Footer區塊（切版：上 1920*440、下 1920*544）
+       ========================= */
+    .page{
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .footer{
+      margin-top:auto;
+      background:
+        radial-gradient(900px 420px at 20% 0%, rgba(255,190,140,.10), transparent 60%),
+        radial-gradient(900px 420px at 90% 40%, rgba(180,120,255,.10), transparent 55%),
+        linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+      border-top: 4px solid rgba(170,70,255,.6); /* 畫面上方紫線示意 */
+    }
+
+    /* 讓整個footer高度對應你給的兩段尺寸（以1920寬為基準比例縮放） */
+    .footer__inner{
+      max-width: 1920px;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    /* 你要的「上 1920*440」 */
+    .footer__top{
+      height: 440px;           /* 目標切版高度 */
+      padding-left: var(--padX);
+      padding-right: var(--padX);
+      padding-top: var(--padY);
+      padding-bottom: 14px; /* 視覺微調 */
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: clamp(14px, 3vw, 56px);
+      align-items:start;
+    }
+
+    /* 你要的「下 1920*544」 */
+    .footer__bottom{
+      height: 544px;           /* 目標切版高度 */
+      padding-left: var(--padX);
+      padding-right: var(--padX);
+      padding-top: clamp(18px, 3.2vw, 40px);
+      padding-bottom: clamp(18px, 3vw, 40px);
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(18px, 3vw, 56px);
+      align-items:start;
+    }
+
+    /* ========= 左側內容（Contact） ========= */
+    .brand{
+      padding-top: 6px;
+    }
+    .kicker{
+      font-size: 13px;
+      letter-spacing: .08em;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .title{
+      font-size: clamp(42px, 4.2vw, 66px);
+      line-height:1.02;
+      font-weight: 800;
+      letter-spacing: .02em;
+      margin: 0 0 18px 0;
+      text-transform: uppercase;
+    }
+    .desc{
+      margin: 0 0 22px 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+      max-width: 520px;
+    }
+
+    .social{
+      display:flex;
+      flex-direction:column;
+      gap: 12px;
+      margin-top: 22px;
+    }
+    .social__icons{
+      display:flex;
+      gap: 10px;
+      align-items:center;
+    }
+    .icon{
+      width: 34px;
+      height: 34px;
+      border: 1.6px solid rgba(255,247,240,.35);
+      border-radius: 50%;
+      display:grid;
+      place-items:center;
+      color: rgba(255,247,240,.92);
+      font-size: 14px;
+      background: rgba(0,0,0,.08);
+      backdrop-filter: blur(4px);
+    }
+    .email{
+      display:flex;
+      gap: 10px;
+      align-items:center;
+      color: var(--muted);
+      font-size: 13px;
+      opacity: .95;
+    }
+    .email .mail-ico{
+      width: 16px; height: 16px; display:inline-grid; place-items:center;
+      color: rgba(255,247,240,.8);
+    }
+
+    /* ========= 右側表單 ========= */
+    .form{
+      justify-self:end;
+      width:min(640px, 100%);
+    }
+
+    .form__row{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .field{
+      border: 1.6px solid rgba(255,247,240,.65);
+      border-radius: var(--radius);
+      background: rgba(0,0,0,.10);
+      height: 46px;
+      padding: 0 20px;
+      color: var(--text);
+      outline: none;
+      font-size: 14px;
+    }
+    .field::placeholder{ color: rgba(255,247,240,.5); }
+
+    textarea.field{
+      height: 132px;
+      padding-top: 16px;
+      resize: none;
+      border-radius: 26px;
+      line-height: 1.4;
+    }
+
+    .btn{
+      height: 48px;
+      border-radius: 999px;
+      border: none;
+      width: 100%;
+      margin-top: 18px;
+      background: #fff;
+      color: #2a0f09;
+      font-weight: 700;
+      letter-spacing: .02em;
+      cursor:pointer;
+      box-shadow: var(--shadow);
+    }
+    .btn:active{ transform: translateY(1px); }
+
+    /* 你說「圖片位置留白」：這裡我們保留一塊空白卡（可放圖片） */
+    .image-blank{
+      border: 1px dashed rgba(255,247,240,.35);
+      border-radius: 26px;
+      height: 220px;
+      margin-top: 8px;
+      background: rgba(0,0,0,.06);
+      display:flex;
+      align-items:flex-start;
+      padding: 18px;
+      overflow:hidden;
+    }
+    .image-blank .note{
+      color: rgba(255,247,240,.6);
+      font-size: 13px;
+      line-height:1.5;
+    }
+
+    /* =========================
+       RWD
+       ========================= */
+
+    /* 不要顯示 X 軸：強制不要溢出 */
+    body{ overflow-x:hidden; }
+
+    /* 1024~ */
+    @media (max-width: 1100px){
+      .footer__top, .footer__bottom{
+        height:auto; /* RWD不強制高度，避免擠壓 */
+        padding-top: clamp(18px, 4vw, 44px);
+        padding-bottom: clamp(18px, 4vw, 44px);
+      }
+      .footer__top{ grid-template-columns: 1fr; }
+      .footer__bottom{ grid-template-columns: 1fr; }
+      .form{ justify-self:stretch; }
+      .form__row{ grid-template-columns: 1fr 1fr; }
+    }
+
+    /* 手機 */
+    @media (max-width: 640px){
+      :root{ --radius: 22px; }
+      .footer__top, .footer__bottom{
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+      .form__row{ grid-template-columns: 1fr; }
+      textarea.field{ height: 140px; }
+      .image-blank{ height: 180px; }
+      .title{ margin-bottom: 14px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <!-- 你頁面其他內容可在這裡 -->
+    <footer class="footer">
+      <div class="footer__inner">
+
+        <!-- 上段：1920*440 -->
+        <section class="footer__top" aria-label="Footer Top">
+          <div class="brand">
+            <div class="kicker">聯絡我們</div>
+            <h2 class="title">CONTACT</h2>
+
+            <p class="desc">
+              若有敬客位意見及相關聯絡需求，歡迎與我們取得聯繫。
+              我們將盡快回覆您的訊息，謝謝！
+            </p>
+
+            <!-- 圖片位置留白（可替換成 img） -->
+            <div class="image-blank" role="img" aria-label="Image placeholder (blank space)">
+              <div class="note">
+                這裡預留圖片/宣傳區塊空間（圖片位置留白）。
+                <br/>你可以放入 <code>&lt;img&gt;</code> 或背景圖。
+              </div>
+            </div>
+
+            <div class="social">
+              <div class="social__icons" aria-label="social icons">
+                <div class="icon" title="Instagram">IG</div>
+                <div class="icon" title="Facebook">FB</div>
+                <div class="icon" title="LinkedIn">in</div>
+              </div>
+
+              <div class="email">
+                <span class="mail-ico">✉</span>
+                <span>service@hexschool.com</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 右側表單（上段先放一部分也可以；這裡為了對齊畫面，上段放第一行與圖片空白左右視覺） -->
+          <div class="form" aria-label="contact form top">
+            <div class="form__row">
+              <input class="field" type="text" placeholder="姓名" />
+              <input class="field" type="text" placeholder="手機號碼" />
+            </div>
+            <input class="field" type="email" placeholder="電子信箱" style="width:100%; margin-bottom:16px; height:46px;" />
+            <textarea class="field" placeholder="備註" aria-label="備註"></textarea>
+          </div>
+        </section>
+
+        <!-- 下段：1920*544 -->
+        <section class="footer__bottom" aria-label="Footer Bottom">
+          <div>
+            <div class="kicker">聯繫專線</div>
+            <p class="desc" style="margin-top:10px; max-width: 560px;">
+              若您有專案合作、顧問或服務需求，請填寫下方資訊並送出。
+              我們會在最短時間內與您取得聯繫。
+            </p>
+          </div>
+
+          <div class="form" aria-label="contact form bottom">
+            <div class="form__row">
+              <input class="field" type="text" placeholder="姓名" />
+              <input class="field" type="text" placeholder="手 經號碼" />
+            </div>
+            <input class="field" type="email" placeholder="電子信箱" style="width:100%; margin-bottom:16px; height:46px;" />
+            <textarea class="field" placeholder="備註" aria-label="備註" style="margin-bottom:0;"></textarea>
+            <button class="btn" type="button">送出</button>
+          </div>
+        </section>
+
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

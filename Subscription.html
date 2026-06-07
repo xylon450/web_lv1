@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* Subscription */
+    .sub-content {
+      height: 440px;
+      background: url("https://github.com/hexschool/2022-web-layout-training/blob/main/2026-web-camp/subscription_bg.png?raw=true") center/cover no-repeat;
+      display: flex;
+      align-items: center;   /* 垂直置中 */
+      justify-content: center; /* 水平置中 */
+      color: white;
+      padding: 40px;
+      margin-top: 60px;
+      gap: 40px;
+    }
+
+    .Subscription1 {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 440px; /* 固定高度 */
+    }
+
+    .Subscription1 img {
+      height: 440px;   /* 圖片高度固定 */
+      width: auto;     /* 保持比例 */
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
+    .sub-left {
+      flex: 1;
+      text-align: center;
+    }
+
+    .card {
+      width: min(860px, 92vw);
+      padding: 48px 28px 34px;
+      border-radius: 18px;
+      background: linear-gradient(120deg, rgba(0,0,0,.35), rgba(0,0,0,.15));
+      border: 1px solid rgba(255,255,255,.12);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .title {
+      font-size: clamp(44px, 6vw, 86px);
+      line-height: 1;
+      letter-spacing: 0.08em;
+      margin: 0 0 14px;
+      font-weight: 800;
+    }
+
+    .subtitle {
+      margin: 0 0 22px;
+      max-width: 56ch;
+      opacity: .9;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* 電子信箱 input + 送出 button */
+    .subscribe {
+      margin-top: 18px;
+      padding: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.6);
+      background: rgba(0,0,0,.15);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .subscribe input[type="email"]{
+      flex: 1;
+      min-width: 0;
+      border: 0;
+      outline: none;
+      background: transparent;
+      color: #fff;
+      padding: 14px 18px;
+      font-size: 16px;
+    }
+
+    .subscribe input::placeholder{
+      color: rgba(255,255,255,.7);
+    }
+
+    .subscribe button{
+      border: 0;
+      outline: none;
+      cursor: pointer;
+      padding: 12px 22px;
+      font-size: 16px;
+      border-radius: 999px;
+      color: #fff;
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.55);
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      white-space: nowrap;
+    }
+
+    .subscribe button:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.22);
+      border-color: rgba(255,255,255,.75);
+    }
+
+    .small-label{
+      opacity: .9;
+      margin-bottom: 10px;
+      font-weight: 600;
+      letter-spacing: .04em;
+    }
+
+    /* 手機排版 */
+    @media (max-width: 520px){
+      .subscribe{
+        padding: 10px;
+        gap: 10px;
+      }
+      .subscribe input[type="email"]{
+        padding: 12px 14px;
+      }
+      .subscribe button{
+        padding: 11px 16px;
+        font-size: 15px;
+      }
+  </style>
+</head>
+<body>
+  <!-- Subscription -->
+  <div class="sub-content">
+    <div>
+    <!-- 左邊圖片 -->
+    <div class="Subscription1">
+      <img src="https://github.com/hexschool/2022-web-layout-training/blob/main/2026-web-camp/subscription.png?raw=true" alt="Subscription1">
+      <div class="sub-form">
+        
+      </div>
+    </div>
+</div>
+    <!-- 右邊文字 -->
+    <div class="card">
+        <div class="small-label">電子報訂閱</div>
+        <h1 class="title">SUBSCRIPTION</h1>
+    
+        <p class="subtitle">
+          你也在追求設計美感與情感的完美平衡嗎？作為深度設計師我由衷相信，
+          我深知每個細節都能創造價值。訂閱電子報，我將分享如何利用 AI 工具提升產能！
+        </p>
+    
+        <form class="subscribe" action="#" method="post">
+          <input
+            type="email"
+            name="email"
+            placeholder="電子信箱"
+            autocomplete="email"
+            required
+          />
+          <button type="submit">送出</button>
+        </form>
+      </div>
+  </div>
+</body>
+</html>

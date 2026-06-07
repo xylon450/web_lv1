@@ -1,0 +1,479 @@
+```html
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nelson | UI/UX 設計師</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&amp;family=Playfair+Display:wght@700&amp;display=swap');
+        
+        :root {
+            --accent: #f4a261;
+        }
+        
+        body {
+            font-family: 'Noto Sans TC', system-ui, sans-serif;
+        }
+        
+        .heading-font {
+            font-family: 'Playfair Display', sans-serif;
+        }
+
+        .hero-bg {
+            background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://picsum.photos/id/1015/1920/800');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .no-x-scroll {
+            overflow-x: hidden;
+        }
+
+        .project-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+        }
+
+        .tail-container {
+            max-width: 1920px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body class="no-x-scroll bg-[#f8f1e9] text-neutral-800 overflow-x-hidden">
+    <!-- NAV -->
+    <nav class="bg-white border-b border-neutral-200 sticky top-0 z-50">
+        <div class="max-w-[1920px] mx-auto px-8 py-6 flex items-center justify-between">
+            <div class="flex items-center gap-x-3">
+                <span class="text-3xl font-bold heading-font tracking-tight">Nelson</span>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-x-10 text-lg">
+                <a href="#services" class="hover:text-[#f4a261] transition-colors">服務項目</a>
+                <a href="#projects" class="hover:text-[#f4a261] transition-colors">專案作品</a>
+                <a href="#blogs" class="hover:text-[#f4a261] transition-colors">部落格</a>
+                <a href="#contact" class="hover:text-[#f4a261] transition-colors">與我聯絡</a>
+            </div>
+            
+            <div class="flex items-center gap-x-4">
+                <button onclick="toggleMobileMenu()" 
+                        class="md:hidden text-2xl">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div id="mobileMenu" class="hidden md:hidden fixed inset-0 bg-white z-50 pt-20 px-8">
+        <div class="flex flex-col gap-y-8 text-2xl">
+            <a href="#services" class="hover:text-[#f4a261]" onclick="toggleMobileMenu()">服務項目</a>
+            <a href="#projects" class="hover:text-[#f4a261]" onclick="toggleMobileMenu()">專案作品</a>
+            <a href="#blogs" class="hover:text-[#f4a261]" onclick="toggleMobileMenu()">部落格</a>
+            <a href="#contact" class="hover:text-[#f4a261]" onclick="toggleMobileMenu()">與我聯絡</a>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <header class="hero-bg h-[800px] flex items-center relative" style="background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url('https://picsum.photos/id/1015/1920/800');">
+        <div class="max-w-[1920px] mx-auto px-8 md:px-16 grid md:grid-cols-2 gap-12 items-center h-full">
+            <!-- Left Content -->
+            <div class="space-y-8 pt-20 md:pt-0">
+                <div class="inline-flex items-center gap-x-3 bg-white/90 backdrop-blur-md px-6 py-2 rounded-3xl text-sm font-medium">
+                    <div class="w-3 h-3 bg-emerald-400 rounded-full animate-pulse"></div>
+                    開放接案中
+                </div>
+                
+                <h1 class="text-7xl md:text-[92px] leading-none font-bold heading-font tracking-tighter">
+                    Hello<br>I'm Nelson
+                </h1>
+                
+                <p class="max-w-md text-xl leading-relaxed text-neutral-700">
+                    我是一個擁有 10 年經驗的 UI/UX 設計師和前端工程師<br>
+                    喜歡把美學和程式結合，打造一個又一個精美的網頁設計！
+                </p>
+                
+                <div class="flex items-center gap-x-6">
+                    <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })" 
+                            class="bg-neutral-900 hover:bg-black text-white px-10 py-6 rounded-3xl text-lg font-medium transition-all active:scale-95">
+                        與我聯絡
+                    </button>
+                    <button onclick="document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })" 
+                            class="border-2 border-neutral-900 hover:bg-neutral-900 hover:text-white px-10 py-6 rounded-3xl text-lg font-medium transition-all">
+                        我的履歷
+                    </button>
+                </div>
+                
+                <!-- Decorative elements -->
+                <div class="absolute bottom-12 left-12 hidden lg:block">
+                    <div class="w-32 h-32 border border-[#f4a261]/30 rounded-full flex items-center justify-center">
+                        <div class="w-20 h-20 border border-[#f4a261]/50 rounded-full"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Image -->
+            <div class="relative hidden md:block">
+                <div class="absolute -right-10 top-12 bg-white p-3 rounded-3xl shadow-2xl">
+                    <img src="https://picsum.photos/id/1011/620/820" 
+                         alt="Nelson Portrait" 
+                         class="w-[520px] h-[680px] object-cover rounded-3xl shadow-inner">
+                </div>
+                
+                <!-- Floating shapes -->
+                <div class="absolute -left-8 top-36 w-40 h-40 bg-[#f4a261] rounded-[4rem] rotate-12 opacity-20"></div>
+                <div class="absolute right-20 bottom-48 w-28 h-28 bg-[#f4a261] rounded-3xl -rotate-12"></div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-12 left-1/2 hidden md:flex flex-col items-center gap-y-2 text-neutral-400">
+            <div class="text-xs tracking-widest">SCROLL</div>
+            <div class="w-px h-12 bg-gradient-to-b from-transparent via-neutral-400 to-transparent"></div>
+        </div>
+    </header>
+
+    <!-- SERVICES -->
+    <section id="services" class="bg-[#2c2118] text-white py-24">
+        <div class="max-w-[1920px] mx-auto px-8">
+            <div class="flex justify-between items-end mb-16">
+                <div>
+                    <span class="text-[#f4a261] text-sm tracking-widest">服務項目</span>
+                    <h2 class="text-6xl heading-font font-bold">SERVICES</h2>
+                </div>
+                <a href="#" class="hidden md:flex items-center gap-x-3 group">
+                    <span class="text-lg">查看全部</span>
+                    <div class="w-10 h-10 bg-white/10 group-hover:bg-[#f4a261] transition-colors rounded-2xl flex items-center justify-center">
+                        →
+                    </div>
+                </a>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white/5 hover:bg-white/10 transition-all p-8 rounded-3xl group">
+                    <div class="h-14 w-14 bg-white/10 rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:rotate-12 transition-transform">🎨</div>
+                    <h3 class="text-3xl font-semibold mb-3">GRAPHIC<br>平面設計</h3>
+                    <p class="text-neutral-400 leading-relaxed">
+                        從品牌識別到視覺傳達，用專業設計精準傳遞核心價值
+                    </p>
+                    <div class="mt-12 text-5xl text-[#f4a261]/30 group-hover:text-[#f4a261]/70 transition-colors">01</div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-white/5 hover:bg-white/10 transition-all p-8 rounded-3xl group">
+                    <div class="h-14 w-14 bg-white/10 rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:-rotate-6 transition-transform">📱</div>
+                    <h3 class="text-3xl font-semibold mb-3">WEBSITE<br>網頁設計</h3>
+                    <p class="text-neutral-400 leading-relaxed">
+                        美感易用並重，以 Figma 打造直覺優質的使用者體驗
+                    </p>
+                    <div class="mt-12 text-5xl text-[#f4a261]/30 group-hover:text-[#f4a261]/70 transition-colors">02</div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-white/5 hover:bg-white/10 transition-all p-8 rounded-3xl group">
+                    <div class="h-14 w-14 bg-white/10 rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:rotate-6 transition-transform">💻</div>
+                    <h3 class="text-3xl font-semibold mb-3">FRONTEND<br>前端切版</h3>
+                    <p class="text-neutral-400 leading-relaxed">
+                        精準轉譯設計稿細節，建構流暢穩定 RWD 響應式網頁
+                    </p>
+                    <div class="mt-12 text-5xl text-[#f4a261]/30 group-hover:text-[#f4a261]/70 transition-colors">03</div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="bg-white/5 hover:bg-white/10 transition-all p-8 rounded-3xl group">
+                    <div class="h-14 w-14 bg-white/10 rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:-rotate-12 transition-transform">⚙️</div>
+                    <h3 class="text-3xl font-semibold mb-3">BACKEND<br>後端開發</h3>
+                    <p class="text-neutral-400 leading-relaxed">
+                        佈署穩定系統架構，串接 API 並確保數據處理安全
+                    </p>
+                    <div class="mt-12 text-5xl text-[#f4a261]/30 group-hover:text-[#f4a261]/70 transition-colors">04</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="py-24 bg-white">
+        <div class="max-w-[1920px] mx-auto px-8">
+            <div class="flex justify-between items-center mb-16">
+                <div>
+                    <span class="text-[#f4a261]">專案作品</span>
+                    <h2 class="text-6xl heading-font font-bold">PROJECTS</h2>
+                </div>
+                <a href="#" class="flex items-center gap-x-4 text-lg group">
+                    <span>全部專案</span>
+                    <span class="text-3xl group-hover:translate-x-2 transition">→</span>
+                </a>
+            </div>
+            
+            <div class="space-y-24">
+                <!-- Project 1 -->
+                <div class="grid md:grid-cols-12 gap-8 items-center">
+                    <div class="md:col-span-5">
+                        <div class="bg-[#f8f1e9] aspect-video rounded-3xl overflow-hidden">
+                            <img src="https://picsum.photos/id/201/900/600" 
+                                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="植物品牌">
+                        </div>
+                    </div>
+                    <div class="md:col-span-7">
+                        <div class="max-w-lg">
+                            <div class="text-sm text-neutral-500 mb-4">Oct 16, 2025</div>
+                            <h3 class="text-4xl leading-tight font-medium mb-6">
+                                品牌視覺與電商整合，多肉植物品牌電商建置
+                            </h3>
+                            <p class="text-neutral-600 mb-8">
+                                從品牌識別設計到 RWD 網站開發，打造療癒系植栽購物體驗
+                            </p>
+                            <button class="bg-neutral-900 text-white px-8 py-4 rounded-3xl hover:bg-black transition">
+                                前往專案 →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="grid md:grid-cols-12 gap-8 items-center">
+                    <div class="md:col-span-7 order-2 md:order-1">
+                        <div class="max-w-lg md:ml-auto">
+                            <div class="text-sm text-neutral-500 mb-4">Oct 16, 2025</div>
+                            <h3 class="text-4xl leading-tight font-medium mb-6">
+                                數位產品 UI/UX 設計，個人化財務視覺化軟體
+                            </h3>
+                            <p class="text-neutral-600 mb-8">
+                                運用數據視覺化邏輯，將複雜的財務數據轉化為直覺的操作介面
+                            </p>
+                            <button class="bg-neutral-900 text-white px-8 py-4 rounded-3xl hover:bg-black transition">
+                                前往專案 →
+                            </button>
+                        </div>
+                    </div>
+                    <div class="md:col-span-5 order-1 md:order-2">
+                        <div class="bg-[#f8f1e9] aspect-video rounded-3xl overflow-hidden">
+                            <img src="https://picsum.photos/id/201/900/600" 
+                                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Finance App">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="grid md:grid-cols-12 gap-8 items-center">
+                    <div class="md:col-span-5">
+                        <div class="bg-[#f8f1e9] aspect-video rounded-3xl overflow-hidden">
+                            <img src="https://picsum.photos/id/870/900/600" 
+                                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Dessert">
+                        </div>
+                    </div>
+                    <div class="md:col-span-7">
+                        <div class="max-w-lg">
+                            <div class="text-sm text-neutral-500 mb-4">Oct 16, 2025</div>
+                            <h3 class="text-4xl leading-tight font-medium mb-6">
+                                品牌識別與包裝設計，法式甜點品牌視覺重塑
+                            </h3>
+                            <p class="text-neutral-600 mb-8">
+                                以溫暖、輕盈的視覺語言，精準定位高質感甜點市場的品牌形象
+                            </p>
+                            <button class="bg-neutral-900 text-white px-8 py-4 rounded-3xl hover:bg-black transition">
+                                前往專案 →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOGS -->
+    <section id="blogs" class="bg-[#f8f1e9] py-24">
+        <div class="max-w-[1920px] mx-auto px-8">
+            <div class="flex items-center justify-between mb-12">
+                <div>
+                    <span class="uppercase tracking-widest text-sm">部落格</span>
+                    <h2 class="text-6xl heading-font font-bold">BLOGS</h2>
+                </div>
+                <button class="border border-neutral-400 px-8 py-3 rounded-3xl hover:bg-neutral-900 hover:text-white transition">
+                    探索更多
+                </button>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Blog 1 -->
+                <div class="group">
+                    <div class="overflow-hidden rounded-3xl mb-6">
+                        <img src="https://picsum.photos/id/201/600/420" 
+                             class="w-full aspect-video object-cover group-hover:scale-110 transition-transform" alt="">
+                    </div>
+                    <div class="text-xs text-neutral-500 mb-3">Oct 16, 2022 • UIUX 設計</div>
+                    <h4 class="line-clamp-2 text-2xl font-medium leading-tight group-hover:text-[#f4a261] transition-colors">
+                        10年職人手記：如何運用 Figma 與 Storybook 打造美感與邏輯兼具的企業級設計系統
+                    </h4>
+                </div>
+                
+                <!-- Blog 2 -->
+                <div class="group">
+                    <div class="overflow-hidden rounded-3xl mb-6">
+                        <img src="https://picsum.photos/id/133/600/420" 
+                             class="w-full aspect-video object-cover group-hover:scale-110 transition-transform" alt="">
+                    </div>
+                    <div class="text-xs text-neutral-500 mb-3">Oct 16, 2022 • 品牌設計</div>
+                    <h4 class="line-clamp-2 text-2xl font-medium leading-tight group-hover:text-[#f4a261] transition-colors">
+                        從平面識別到數位體驗：以「植感生活」為例，探討跨媒體品牌視覺在網頁上的精準轉譯
+                    </h4>
+                </div>
+                
+                <!-- Blog 3 -->
+                <div class="group">
+                    <div class="overflow-hidden rounded-3xl mb-6">
+                        <img src="https://picsum.photos/id/201/600/420" 
+                             class="w-full aspect-video object-cover group-hover:scale-110 transition-transform" alt="">
+                    </div>
+                    <div class="text-xs text-neutral-500 mb-3">Oct 16, 2022 • 前端技術</div>
+                    <h4 class="line-clamp-2 text-2xl font-medium leading-tight group-hover:text-[#f4a261] transition-colors">
+                        揭開金融 App 的設計密碼：如何優化 Open Bank API 的複雜數據呈現與後端串接安全性
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SUBSCRIPTION -->
+    <section class="bg-gradient-to-r from-[#2c2118] to-neutral-900 py-20 text-white">
+        <div class="max-w-[1920px] mx-auto px-8 grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <img src="https://picsum.photos/id/1015/900/520" 
+                     class="rounded-3xl shadow-2xl" alt="Laptop">
+            </div>
+            <div class="space-y-8">
+                <div class="uppercase text-[#f4a261] tracking-widest text-sm">電子報訂閱</div>
+                <h2 class="text-6xl heading-font leading-none">SUBSCRIPTION</h2>
+                <p class="text-lg max-w-md text-neutral-300">
+                    你也在追求設計與技術落地的完美平衡嗎？作為資深設計師兼工程師，我深刻知曉跨領域協作的痛點。訂閱電子報，我將分享如何利用 AI 工具提升產能！
+                </p>
+                
+                <form class="flex flex-col sm:flex-row gap-4">
+                    <input type="email" 
+                           placeholder="電子信箱"
+                           class="flex-1 bg-white/10 border border-white/30 focus:border-[#f4a261] px-8 py-6 rounded-3xl outline-none text-white placeholder:text-white/60">
+                    <button type="button"
+                            class="bg-white text-neutral-900 hover:bg-[#f4a261] px-12 py-6 rounded-3xl font-medium transition-all whitespace-nowrap">
+                        送出
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="bg-white py-24">
+        <div class="max-w-[1920px] mx-auto px-8">
+            <div class="grid md:grid-cols-12 gap-16">
+                <!-- Left -->
+                <div class="md:col-span-5">
+                    <h2 class="text-7xl heading-font font-bold leading-none mb-8">CONTACT</h2>
+                    <p class="text-xl text-neutral-600">
+                        對合作有興趣嗎？<br>
+                        讓我們一起創造美好的數位體驗！
+                    </p>
+                    
+                    <div class="mt-16 space-y-8">
+                        <div>
+                            <div class="text-xs text-neutral-400">EMAIL</div>
+                            <a href="mailto:hello@nelson.design" class="text-2xl hover:text-[#f4a261]">hello@nelson.design</a>
+                        </div>
+                        <div>
+                            <div class="text-xs text-neutral-400">INSTAGRAM</div>
+                            <a href="#" class="text-2xl hover:text-[#f4a261]">@nelsoncreates</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Form -->
+                <div class="md:col-span-7">
+                    <form class="space-y-8">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <label class="block text-sm mb-3">姓名</label>
+                                <input type="text" class="w-full border-b border-neutral-300 focus:border-neutral-900 py-4 outline-none text-lg">
+                            </div>
+                            <div>
+                                <label class="block text-sm mb-3">公司 / 組織</label>
+                                <input type="text" class="w-full border-b border-neutral-300 focus:border-neutral-900 py-4 outline-none text-lg">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm mb-3">電子郵件</label>
+                            <input type="email" class="w-full border-b border-neutral-300 focus:border-neutral-900 py-4 outline-none text-lg">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm mb-3">專案描述</label>
+                            <textarea rows="6" class="w-full border-b border-neutral-300 focus:border-neutral-900 py-4 outline-none text-lg resize-none"></textarea>
+                        </div>
+                        
+                        <button type="button" 
+                                class="mt-8 bg-neutral-900 text-white px-16 py-8 rounded-3xl text-xl hover:bg-black transition-all">
+                            送出訊息
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-neutral-900 text-white py-16">
+        <div class="max-w-[1920px] mx-auto px-8 text-center">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-y-6">
+                <div class="text-3xl font-bold heading-font">Nelson</div>
+                <div class="text-neutral-400 text-sm">
+                    © 2026 Nelson Studio. All Rights Reserved.
+                </div>
+                <div class="flex gap-x-8 text-2xl">
+                    <i class="fa-brands fa-instagram cursor-pointer hover:text-[#f4a261]"></i>
+                    <i class="fa-brands fa-behance cursor-pointer hover:text-[#f4a261]"></i>
+                    <i class="fa-brands fa-linkedin cursor-pointer hover:text-[#f4a261]"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tailwind script already included via CDN
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+        
+        // Close mobile menu when clicking links
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobileMenu').classList.add('hidden');
+            });
+        });
+        
+        // Smooth scroll for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        console.log('%cNelson Portfolio 已成功載入 ✨', 'color:#f4a261; font-size:14px; font-family:monospace');
+    </script>
+</body>
+</html>

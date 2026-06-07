@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BLOGS 部落格 | hexjon</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">Helson</div>
+      <nav class="main-nav">
+        <a href="#">首頁</a>
+        <a href="#">作品</a>
+        <a href="#">部落格</a>
+        <a href="#">關於我們</a>
+        <a href="#">聯絡</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>BLOGS</h1>
+      <p>部落格</p>
+    </div>
+  </section>
+
+  <!-- Main Layout -->
+  <div class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="side-box">
+        <div class="side-title">全部</div>
+        <ul class="nav">
+          <li class="active">品牌設計</li>
+          <li>平面設計</li>
+          <li>UIUX設計</li>
+          <li>網頁設計</li>
+          <li>設計規範</li>
+          <li>前端技術</li>
+          <li>後端架構</li>
+          <li>AI 趨勢應用</li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Blog Posts -->
+    <section class="content">
+      <!-- Post 1 -->
+      <article class="post">
+        <div class="media">
+          <img src="https://github.com/hexschool/2022-web-layout-training/blob/main/2026-web-camp/blog_1.png?raw=true" alt="blog1">
+        </div>
+        <div class="meta">
+          <div class="tags">UIUX 設計・網頁設計・前端技術</div>
+          <h2 class="title">網頁編輯的設計與動態：利用 CSS 與 JS 動畫實現給站入雲並提升用戶轉化率</h2>
+          <div class="info-row">
+            <span class="pill">Oct 16, 2022</span>
+            <span class="pill">110 views</span>
+            <span class="pill">2 shares</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Post 2 -->
+      <article class="post">
+        <div class="media">
+          <img src="https://github.com/hexschool/2022-web-layout-training/blob/main/2026-web-camp/blog_2.png?raw=true" alt="blog2">
+        </div>
+        <div class="meta">
+          <div class="tags">UIUX 設計・設計視覺・前端技術</div>
+          <h2 class="title">10年職人手記：如何運用 Figma 與 Storybook 打造美感與邏輯兼具的企業級設計系統</h2>
+          <div class="info-row">
+            <span class="pill">Oct 16, 2022</span>
+            <span class="pill">110 views</span>
+            <span class="pill">2 shares</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Post 3 -->
+      <article class="post">
+        <div class="media">
+          <img src="https://github.com/hexschool/2022-web-layout-training/blob/main/2026-web-camp/blog_3.png?raw=true" alt="blog3">
+        </div>
+        <div class="meta">
+          <div class="tags">品牌設計・平面設計・UIUX 設計</div>
+          <h2 class="title">從平面跳到數位體驗：以「稚處生活」為例，探討跨媒體品牌視覺在網頁上的精準轉譯</h2>
+          <div class="info-row">
+            <span class="pill">Oct 16, 2022</span>
+            <span class="pill">110 views</span>
+            <span class="pill">2 shares</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Post 4 -->
+      <article class="post">
+        <div class="media">
+          <img src="https://github.com/hexschool/2022-web-layout-training/blob/main/2026-web-camp/blog_4.png?raw=true" alt="blog4">
+        </div>
+        <div class="meta">
+          <div class="tags">UIUX 設計・前端技術・AI 趨勢應用</div>
+          <h2 class="title">當 AI 遇上前介設計：資深設計師如何利用生成式工具重新開啟從零到一的流程與想像</h2>
+          <div class="info-row">
+            <span class="pill">Oct 16, 2022</span>
+            <span class="pill">110 views</span>
+            <span class="pill">2 shares</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Post 5 -->
+      <article class="post">
+        <div class="media">
+          <img src="https://github.com/hexschool/2022-web-layout-training/blob/main/2026-web-camp/blog_5.png?raw=true" alt="blog5">
+        </div>
+        <div class="meta">
+          <div class="tags">前端技術・後端架構・AI 趨勢應用</div>
+          <h2 class="title">揭開金融 App 的設計密碼：如何優化 Open Bank API 的複雜數據呈現與安全性</h2>
+          <div class="info-row">
+            <span class="pill">Oct 16, 2022</span>
+            <span class="pill">110 views</span>
+            <span class="pill">2 shares</span>
+          </div>
+        </div>
+      </article>
+    </section>
+      
+  </div>
+
+
+  <div id="subscription-container"></div>
+  <script>
+    // 使用 fetch 載入 Subscription.html
+    fetch("Subscription.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("subscription-container").innerHTML = data;
+      })
+      .catch(error => console.error("載入失敗:", error));
+  </script>
+
+
+  <div class="page">
+    <!-- 你頁面其他內容可在這裡 -->
+      <footer>
+
+    <div id="footer"></div>
+      </footer>
+  </div>
+  <script>
+    fetch("footer.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("footer").innerHTML = data;
+        });
+</script>
+</body>
+
+</html>
