@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>部落格</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
@@ -55,14 +55,14 @@
             <a href="#">
               <img
                 src="https://github.com/hexschool/2022-web-layout-training/blob/main/2026-web-camp/blog_1.png?raw=true"
-                alt="網頁畫面怎麼更吸睛？用 CSS 和 JS 打造更有層次的視覺效果" />
+                alt="網頁編輯的互動藝術：利用 CSS 與 JS 動畫為諮詢網站注入靈魂並提升用戶轉化率" />
               <div>
                 <ul class="blog-tags">
                   <li>UIUX 設計</li>
                   <li>網頁設計</li>
                   <li>前端開發</li>
                 </ul>
-                <h2>網頁畫面怎麼更吸睛？用 CSS 和 JS 打造更有層次的視覺效果</h2>
+                <h2>網頁編輯的互動藝術：利用 CSS 與 JS 動畫為諮詢網站注入靈魂並提升用戶轉化率</h2>
                 <footer class="meta">
                   <time datetime="2022-10-16">Oct 16, 2022</time>
                   <div class="tail">
@@ -87,7 +87,7 @@
                   <li>設計系統</li>
                   <li>前端開發</li>
                 </ul>
-                <h2>10 年職人筆記：如何用 Figma 與 Storybook 打造完整的設計系統</h2>
+                <h2>10 年職人筆記：如何用 Figma 與 Storybook 打造美感與邏輯兼具的企業設計系統</h2>
                 <footer class="meta">
                   <time datetime="2022-10-16">Oct 16, 2022</time>
                   <div class="tail">
@@ -112,7 +112,7 @@
                   <li>平面設計</li>
                   <li>UIUX 設計</li>
                 </ul>
-                <h2>從平面設計到互動體驗：用視覺故事把網站內容講清楚</h2>
+                <h2>從平面識別到數位體驗：以「植感生活」為例，探討跨媒體品牌視覺在裝網頁上的精準轉釋</h2>
                 <footer class="meta">
                   <time datetime="2022-10-16">Oct 16, 2022</time>
                   <div class="tail">
@@ -137,7 +137,7 @@
                   <li>前端開發</li>
                   <li>AI 應用趨勢</li>
                 </ul>
-                <h2>AI 與介面設計：資深設計師如何運用 AI 工具提升工作效率</h2>
+                <h2>當AI遇上介面設計：資深設計師如何利用生成式工具重塑前端開發工作流與視覺想像力</h2>
                 <footer class="meta">
                   <time datetime="2022-10-16">Oct 16, 2022</time>
                   <div class="tail">
@@ -162,7 +162,7 @@
                   <li>後端工程</li>
                   <li>AI 應用趨勢</li>
                 </ul>
-                <h2>行動裝置 App 設計：如何用 Open Bank API 串接出更流暢的體驗</h2>
+                <h2>揭開金融 App 的設計密碼：如何優化 Open Bank API 的複雜數據呈現與後端串接安全性</h2>
                 <footer class="meta">
                   <time datetime="2022-10-16">Oct 16, 2022</time>
                   <div class="tail">
@@ -188,18 +188,16 @@
   </section>
 
   <!-- subscription -->
-
-  <div id="subscription-container"></div>
+  <div id="subscription"></div>
   <script>
     // 使用 fetch 載入 Subscription.html
-    fetch("Subscription.html")
+    fetch("subscription.html")
       .then(response => response.text())
       .then(data => {
-        document.getElementById("subscription-container").innerHTML = data;
+        document.getElementById("subscription").innerHTML = data;
       })
       .catch(error => console.error("載入失敗:", error));
   </script>
-
  
 
         <div class="page">
