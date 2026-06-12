@@ -1,166 +1,234 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant-TW">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BLOGS 部落格 | hexjon</title>
-  <link rel="stylesheet" href="style.css">
+  <title>部落格</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
 
-  <!-- Header -->
- 
-  <div id="header"></div>
+<body>
+  <!--   header -->
+  <div class="header">
+    <div class="container">
+      <div class="brand">
+        <a href="index.html"><img src="./img/device-pc.svg" alt="Nelson logo" class="logo"></a>
+      </div>
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <label for="menu-toggle" class="menu-toggle-btn" aria-label="Toggle menu">
+        <span class="material-symbols-outlined">menu</span>
+      </label>
+      <nav class="menu-nav" aria-label="Main navigation">
+        <ul class="menu">
+          <li><a href="service.html">服務項目</a></li>
+          <li><a href="project.html">作品集</a></li>
+          <li><a href="#" class="active">部落格</a></li>
+          <li><a href="#contactform">聯絡我</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <!--   banner -->
+  <div class="banner">
+    <div class="slogan">
+      <h2>BLOGS</h2>
+      <p>部落格</p>
+      <div class="bg">BLOG</div>
+    </div>
+  </div>
+  <!-- content -->
+  <section class="container blog">
+    <aside class="sidebar">
+      <nav>
+        <ul>
+          <li><a href="#" class="active nav-item">全部</a></li>
+          <li><a href="#" class="nav-item">平面設計</a></li>
+          <li><a href="#" class="nav-item">視覺設計</a></li>
+          <li><a href="#" class="nav-item">UIUX 設計</a></li>
+          <li><a href="#" class="nav-item">網頁設計</a></li>
+          <li><a href="#" class="nav-item">設計系統</a></li>
+          <li><a href="#" class="nav-item">前端開發</a></li>
+          <li><a href="#" class="nav-item">後端工程</a></li>
+          <li><a href="#" class="nav-item">AI 應用趨勢</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="post">
+      <ul class="blog-card-wrapper">
+        <!-- card 1 -->
+        <li>
+          <article>
+            <a href="#">
+              <img
+                src="https://github.com/hexschool/2022-web-layout-training/blob/main/2026-web-camp/blog_1.png?raw=true"
+                alt="網頁畫面怎麼更吸睛？用 CSS 和 JS 打造更有層次的視覺效果" />
+              <div>
+                <ul class="blog-tags">
+                  <li>UIUX 設計</li>
+                  <li>網頁設計</li>
+                  <li>前端開發</li>
+                </ul>
+                <h2>網頁畫面怎麼更吸睛？用 CSS 和 JS 打造更有層次的視覺效果</h2>
+                <footer class="meta">
+                  <time datetime="2022-10-16">Oct 16, 2022</time>
+                  <div class="tail">
+                    <span><span class="material-symbols-outlined">visibility</span>110 views</span>
+                    <span><span class="material-symbols-outlined">share</span>2 shares</span>
+                  </div>
+                </footer>
+              </div>
+            </a>
+          </article>
+        </li>
+        <!-- card 2 -->
+        <li>
+          <article>
+            <a href="#">
+              <img
+                src="https://github.com/hexschool/2022-web-layout-training/blob/main/2026-web-camp/blog_2.png?raw=true"
+                alt="10 年職人筆記：如何用 Figma 與 Storybook 打造完整的設計系統" />
+              <div>
+                <ul class="blog-tags">
+                  <li>UIUX 設計</li>
+                  <li>設計系統</li>
+                  <li>前端開發</li>
+                </ul>
+                <h2>10 年職人筆記：如何用 Figma 與 Storybook 打造完整的設計系統</h2>
+                <footer class="meta">
+                  <time datetime="2022-10-16">Oct 16, 2022</time>
+                  <div class="tail">
+                    <span><span class="material-symbols-outlined">visibility</span>110 views</span>
+                    <span><span class="material-symbols-outlined">share</span>2 shares</span>
+                  </div>
+                </footer>
+              </div>
+            </a>
+          </article>
+        </li>
+        <!-- card 3 -->
+        <li>
+          <article>
+            <a href="#">
+              <img
+                src="https://github.com/hexschool/2022-web-layout-training/blob/main/2026-web-camp/blog_3.png?raw=true"
+                alt="從平面設計到互動體驗：用視覺故事把網站內容講清楚" />
+              <div>
+                <ul class="blog-tags">
+                  <li>視覺設計</li>
+                  <li>平面設計</li>
+                  <li>UIUX 設計</li>
+                </ul>
+                <h2>從平面設計到互動體驗：用視覺故事把網站內容講清楚</h2>
+                <footer class="meta">
+                  <time datetime="2022-10-16">Oct 16, 2022</time>
+                  <div class="tail">
+                    <span><span class="material-symbols-outlined">visibility</span>110 views</span>
+                    <span><span class="material-symbols-outlined">share</span>2 shares</span>
+                  </div>
+                </footer>
+              </div>
+            </a>
+          </article>
+        </li>
+        <!-- card 4 -->
+        <li>
+          <article>
+            <a href="#">
+              <img
+                src="https://github.com/hexschool/2022-web-layout-training/blob/main/2026-web-camp/blog_4.png?raw=true"
+                alt="AI 與介面設計：資深設計師如何運用 AI 工具提升工作效率" />
+              <div>
+                <ul class="blog-tags">
+                  <li>UIUX 設計</li>
+                  <li>前端開發</li>
+                  <li>AI 應用趨勢</li>
+                </ul>
+                <h2>AI 與介面設計：資深設計師如何運用 AI 工具提升工作效率</h2>
+                <footer class="meta">
+                  <time datetime="2022-10-16">Oct 16, 2022</time>
+                  <div class="tail">
+                    <span><span class="material-symbols-outlined">visibility</span>110 views</span>
+                    <span><span class="material-symbols-outlined">share</span>2 shares</span>
+                  </div>
+                </footer>
+              </div>
+            </a>
+          </article>
+        </li>
+        <!-- card 5 -->
+        <li>
+          <article>
+            <a href="#">
+              <img
+                src="https://github.com/hexschool/2022-web-layout-training/blob/main/2026-web-camp/blog_5.png?raw=true"
+                alt="行動裝置 App 設計：如何用 Open Bank API 串接出更流暢的體驗" />
+              <div>
+                <ul class="blog-tags">
+                  <li>前端開發</li>
+                  <li>後端工程</li>
+                  <li>AI 應用趨勢</li>
+                </ul>
+                <h2>行動裝置 App 設計：如何用 Open Bank API 串接出更流暢的體驗</h2>
+                <footer class="meta">
+                  <time datetime="2022-10-16">Oct 16, 2022</time>
+                  <div class="tail">
+                    <span><span class="material-symbols-outlined">visibility</span>110 views</span>
+                    <span><span class="material-symbols-outlined">share</span>2 shares</span>
+                  </div>
+                </footer>
+              </div>
+            </a>
+          </article>
+        </li>
+      </ul>
+      <ul class="pagination">
+        <li><a href="#"><i class="bi bi-chevron-left"></i></a></li>
+        <li><a href="#" class="active">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">...</a></li>
+        <li><a href="#">20</a></li>
+        <li><a href="#"><i class="bi bi-chevron-right"></i></a></li>
+      </ul>
+    </main>
+  </section>
+
+  <!-- subscription -->
+  <div id="subscription"></div>
   <script>
-    // 使用 fetch 載入 header.html
-    fetch("header.html")
+    // 使用 fetch 載入 Subscription.html
+    fetch("subscription.html")
       .then(response => response.text())
       .then(data => {
-        document.getElementById("header").innerHTML = data;
+        document.getElementById("subscription").innerHTML = data;
       })
       .catch(error => console.error("載入失敗:", error));
   </script>
+ 
+
+        <div class="page">
+            <!-- 你頁面其他內容可在這裡 -->
+              <footer>
+        
+            <div id="footer"></div>
+              </footer>
+          </div>
+          <script>
+            fetch("footer.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("footer").innerHTML = data;
+                });
+        </script>
 
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>BLOGS</h1>
-      <p>部落格</p>
+
+      </div>
     </div>
   </section>
 
-  <!-- Main Layout -->
-  <div class="layout">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="side-box">
-        <div class="side-title">全部</div>
-        <ul class="nav">
-          <li class="active">品牌設計</li>
-          <li>平面設計</li>
-          <li>UIUX設計</li>
-          <li>網頁設計</li>
-          <li>設計規範</li>
-          <li>前端技術</li>
-          <li>後端架構</li>
-          <li>AI 趨勢應用</li>
-        </ul>
-      </div>
-    </aside>
-
-    <!-- Blog Posts -->
-    <section class="content">
-      <!-- Post 1 -->
-      <article class="post">
-        <div class="media">
-          <img src="https://github.com/hexschool/2022-web-layout-training/blob/main/2026-web-camp/blog_1.png?raw=true" alt="blog1">
-        </div>
-        <div class="meta">
-          <div class="tags">UIUX 設計・網頁設計・前端技術</div>
-          <h2 class="title">網頁編輯的設計與動態：利用 CSS 與 JS 動畫實現給站入雲並提升用戶轉化率</h2>
-          <div class="info-row">
-            <span class="pill">Oct 16, 2022</span>
-            <span class="pill">110 views</span>
-            <span class="pill">2 shares</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- Post 2 -->
-      <article class="post">
-        <div class="media">
-          <img src="https://github.com/hexschool/2022-web-layout-training/blob/main/2026-web-camp/blog_2.png?raw=true" alt="blog2">
-        </div>
-        <div class="meta">
-          <div class="tags">UIUX 設計・設計視覺・前端技術</div>
-          <h2 class="title">10年職人手記：如何運用 Figma 與 Storybook 打造美感與邏輯兼具的企業級設計系統</h2>
-          <div class="info-row">
-            <span class="pill">Oct 16, 2022</span>
-            <span class="pill">110 views</span>
-            <span class="pill">2 shares</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- Post 3 -->
-      <article class="post">
-        <div class="media">
-          <img src="https://github.com/hexschool/2022-web-layout-training/blob/main/2026-web-camp/blog_3.png?raw=true" alt="blog3">
-        </div>
-        <div class="meta">
-          <div class="tags">品牌設計・平面設計・UIUX 設計</div>
-          <h2 class="title">從平面跳到數位體驗：以「稚處生活」為例，探討跨媒體品牌視覺在網頁上的精準轉譯</h2>
-          <div class="info-row">
-            <span class="pill">Oct 16, 2022</span>
-            <span class="pill">110 views</span>
-            <span class="pill">2 shares</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- Post 4 -->
-      <article class="post">
-        <div class="media">
-          <img src="https://github.com/hexschool/2022-web-layout-training/blob/main/2026-web-camp/blog_4.png?raw=true" alt="blog4">
-        </div>
-        <div class="meta">
-          <div class="tags">UIUX 設計・前端技術・AI 趨勢應用</div>
-          <h2 class="title">當 AI 遇上前介設計：資深設計師如何利用生成式工具重新開啟從零到一的流程與想像</h2>
-          <div class="info-row">
-            <span class="pill">Oct 16, 2022</span>
-            <span class="pill">110 views</span>
-            <span class="pill">2 shares</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- Post 5 -->
-      <article class="post">
-        <div class="media">
-          <img src="https://github.com/hexschool/2022-web-layout-training/blob/main/2026-web-camp/blog_5.png?raw=true" alt="blog5">
-        </div>
-        <div class="meta">
-          <div class="tags">前端技術・後端架構・AI 趨勢應用</div>
-          <h2 class="title">揭開金融 App 的設計密碼：如何優化 Open Bank API 的複雜數據呈現與安全性</h2>
-          <div class="info-row">
-            <span class="pill">Oct 16, 2022</span>
-            <span class="pill">110 views</span>
-            <span class="pill">2 shares</span>
-          </div>
-        </div>
-      </article>
-    </section>
-      
-  </div>
-
-
-  <div id="subscription-container"></div>
-  <script>
-    // 使用 fetch 載入 Subscription.html
-    fetch("Subscription.html")
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("subscription-container").innerHTML = data;
-      })
-      .catch(error => console.error("載入失敗:", error));
-  </script>
-
-
-  <div class="page">
-    <!-- 你頁面其他內容可在這裡 -->
-      <footer>
-
-    <div id="footer"></div>
-      </footer>
-  </div>
-  <script>
-    fetch("footer.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("footer").innerHTML = data;
-        });
-</script>
 </body>
 
 </html>
