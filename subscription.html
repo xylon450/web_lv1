@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    /* subscription */
+
+    .subscription {
+  background:
+    linear-gradient(var(--dark-60a), var(--dark-60a)),
+    url("https://github.com/hexschool/2022-web-layout-training/blob/main/2026-web-camp/subscription_bg.png?raw=true") center / cover no-repeat;
+  height: 440px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+    @media (max-width: 768px) {
+     height: auto;
+  }
+    @media (max-width: 576px) {
+      height: 629px;
+  }
+}
+
+.subscription > .container {
+  height: 100%;
+  align-items: stretch;
+  @media (max-width: 576px) {
+    flex-direction: column;
+  }
+
+}
+
+.subscription-left {
+  flex: 5;
+  height: 100%;
+  overflow: hidden;
+  @media (max-width: 576px) {
+    padding: 0;
+    flex: 1;
+  }
+}
+
+.sub-img {
+  width: 100%;
+  height: 100%;
+}
+
+.sub-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+@media (max-width: 768px) {
+  .subscription-left,
+  .sub-img,
+  .sub-img img {
+    width: 100%;
+  }
+
+  .subscription-left {
+    width: calc(100% + 24px);
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+
+  .sub-img img {
+    display: block;
+    height: auto;
+  }
+}
+
+.sub-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  gap: 24px;
+  padding: 0 40px;
+  flex: 7;
+   @media (max-width: 768px) {
+    padding: 0 0 40px 0;
+    flex: 1;
+  }
+}
+
+.sub-info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  @media (max-width: 576px) {
+       gap: 12px;
+  }
+}
+
+.sub-title {
+  color: var(--neutral-0);
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 700;
+}
+
+.sub-title h2 {
+  font-size: 80px;
+  line-height: 1.2;
+  @media (max-width: 768px) {
+    font-size: 60px;
+  }
+  @media (max-width: 576px) {
+    font-size: 40px;
+  }
+}
+
+.sub-desc {
+  color: var(--neutral-0);
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 500;  
+  @media (max-width: 576px) {
+    font-size: 14px;
+  }
+
+}
+
+.sub-group {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--neutral-0);
+  border-radius: 999px;          
+  padding: 8px 8px 8px 32px;
+  background: transparent;
+  width: 100%;
+    @media (max-width: 576px) {
+      padding: 8px 8px 8px 20px;
+  }
+}
+
+.sub-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--neutral-0);
+  font-size: 16px;
+  width: 100%;
+  @media (max-width: 576px) {
+      font-size: 14px;
+      overflow-wrap: anywhere;
+  }
+}
+
+.sub-input::placeholder {
+  color: var(--neutral-0);
+  opacity: 1;
+}
+
+.sub-submit {
+  border: none;
+  border-radius: 999px;
+  padding: 10px 24px;
+  background: var(--neutral-0);
+  color: var(--neutral-900);
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  @media (max-width: 576px) {
+      font-size: 14px;
+  }
+}
+
+.sub-submit:hover {
+  opacity: 0.85;
+}
+
+
+/* 連絡我 */
+.contact-bg {
+  background-color:var(--primary-900);
+}
+
+
+.contact {
+  display: flex;
+  justify-content: space-between;
+  padding: 80px 0;
+  flex-wrap: wrap;
+  width: 100%;
+    @media (max-width: 576px) {
+    flex-direction: column;
+  }
+}
+
+.contact-info {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex: 5;
+  @media (max-width: 576px) {
+    padding: 0;
+  }
+}
+
+.contact-title {
+  color: var(--neutral-0);
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 700;
+}
+
+.contact-title h2 {
+  font-size: 80px;
+  line-height: 1.2;
+  @media (max-width: 768px) {
+    font-size: 60px;
+  }
+    @media (max-width: 576px) {
+    font-size: 40px;
+  }
+}
+
+.contact-desc {
+  color: var(--neutral-0);
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 500;  
+}
+
+.contact-social {
+  color: var(--neutral-0);
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 500;  
+  padding-top: 68px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-social ul{
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.contact-social ul li{
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--neutral-0);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+    &:hover {
+      color: var(--primary-500);
+      border: 1px solid var(--primary-500);
+      cursor: pointer;
+    }
+}
+
+.bi {
+  font-size: 16px;
+}
+
+.contact-email {
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  min-width: 0;
+  flex-wrap: wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+   .icon {
+    font-size: 18px;
+    margin-right: 8px;
+    flex-shrink: 0;
+  }
+    &:hover {
+    color: var(--primary-500);
+    cursor: pointer;
+  }
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 0 40px;
+  flex: 7;
+  @media (max-width: 576px) {
+    padding: 0;
+  }
+}
+
+.form-row {
+  display: flex;
+  gap: 24px;
+  @media (max-width: 576px) {
+   flex-direction: column;
+  }
+}
+
+.form-input {
+  width: 100%;
+  color: var(--neutral-0);
+  background: transparent;
+  border: 1px solid var(--neutral-0);
+  border-radius: 40px;
+  outline: none;
+  padding: 20px 32px;
+  @media (max-width: 576px) {
+      padding: 16px 20px;
+  }
+}
+
+.form-input::placeholder {
+  color: var(--neutral-0);
+}
+
+.form-textarea {
+  color: var(--neutral-0);
+  background: transparent;
+  width: 100%;
+  height: 136px;
+  border: 1px solid var(--neutral-0);
+  border-radius: 40px;
+  outline: none;
+  resize: none;
+  padding: 20px 32px;
+    @media (max-width: 576px) {
+      padding: 16px 20px;
+  }
+}
+
+.form-textarea::placeholder {
+  color: var(--neutral-0);
+}
+
+.form-submit {
+  color: var(--neutral-700);
+  background: var(--neutral-0);
+  width: 100%; 
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  padding: 12px 0;
+}
+
+.form-submit:hover {
+  background: #ddd0be;
+}
+
+@media (max-width: 768px) {
+  .contact {
+    flex-direction: column;
+    padding: 40px 0;
+  }
+
+  .contact-info {
+    display: contents;
+    padding-bottom: 24px;
+  }
+
+  .contact-title {
+    order: 1;
+    margin-bottom: 12px;
+  }
+
+  .contact-desc {
+    font-size: 14px;
+    order: 2;
+  }
+
+  .contact-form {
+    order: 3;
+    width: 100%;
+    padding: 0;
+    margin-top: 24px;
+    gap: 12px;
+    border-radius: 32px;
+  }
+
+  .contact-social {
+    order: 4;
+    margin-top: 24px;
+    padding: 0;
+    width: 100%;
+    gap: 12px;
+  }
+}
+
+  </style>
+</head>
+<body>
+    <section class="subscription">
+        <div class="container">
+          <div class="subscription-left">
+            <div class="sub-img">
+              <img src="https://github.com/hexschool/2022-web-layout-training/blob/main/2026-web-camp/subscription.png?raw=true" alt="Subscription1" alt="">
+            </div>
+          </div>
+          <div class="sub-form">
+            <div class="sub-info">
+              <div class="sub-title">
+                <p>訂閱電子報</p>
+                <h2>SUBSCRIPTION</h2>
+              </div>
+              <div class="sub-desc">
+                <p>你也在追求設計美感與技術的完美平衡嗎？作為資深設計師兼工程師， 我深知跨領域協作的痛點。訂閱電子報，我將分享如何利用 AI 工具提升產能！</p>
+              </div>
+            </div>
+            <div class="sub-group">
+              <input class="sub-input" type="email" placeholder="輸入電子郵件信箱" />
+              <button class="sub-submit" type="submit">訂閱</button>
+            </div>
+          </div>
+        </div>
+      </section>
+</body>
+</html>
