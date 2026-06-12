@@ -11,24 +11,16 @@
 
 <body>
   <!--   header -->
-  <div class="header">
-    <div class="container">
-      <div class="brand">
-        <a href="index.html"><img src="./img/device-pc.svg" alt="Nelson logo" class="logo"></a>
-      </div>
-      <input type="checkbox" id="menu-toggle" class="menu-toggle">
-      <label for="menu-toggle" class="menu-toggle-btn" aria-label="Toggle menu">
-        <span class="material-symbols-outlined">menu</span>
-      </label>
-      <nav class="menu-nav" aria-label="Main navigation">
-        <ul class="menu">
-          <li><a href="service.html">服務項目</a></li>
-          <li><a href="project.html">作品集</a></li>
-          <li><a href="#" class="active">部落格</a></li>
-          <li><a href="#contactform">聯絡我</a></li>
-        </ul>
-      </nav>
-    </div>
+  <div id="header"></div>
+  <script>
+    // 使用 fetch 載入 header.html
+    fetch("header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+      })
+      .catch(error => console.error("載入失敗:", error));
+  </script>
   </div>
   <!--   banner -->
   <div class="banner">
