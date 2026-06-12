@@ -229,73 +229,7 @@ root {
     cursor: pointer;
   }
 
-  /* Footer */
-  footer {
-    background: #111;
-    color: #aaa;
-    padding: 60px 40px 30px;
-  }
 
-  .footer-content {
-    max-width: 1920px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 40px;
-  }
-
-  /* Responsive */
-  @media (max-width: 420px){
-    /* 只針對footer，且不使用overflow:hidden在body/第一層div */
-    .footer{
-      overflow-x: clip;
-    }
-  
-    /* footer內所有容易溢出的區塊/子層 */
-    .footer *, .footer{
-      min-width: 0;
-    }
-  
-    /* 常見溢出點：input/textarea/button */
-    .footer input,
-    .footer textarea,
-    .footer button{
-      max-width: 100%;
-      width: 100%;
-      box-sizing: border-box;
-    }
-  
-    /* 避免字串不換行造成撐寬（例如placeholder/字串） */
-    .footer,
-    .footer *{
-      overflow-wrap: anywhere;
-      word-break: break-word;
-      hyphens: auto;
-    }
-  
-    /* 避免外部容器預設寬度/計算造成 1~2px 溢出 */
-    .footer__inner{
-      width: 100%;
-      max-width: 100%;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  
-    /* 特別保護 grid：避免某些瀏覽器在窄版給 min-content 撐開 */
-    .footer__top,
-    .footer__bottom{
-      display: block; /* 針對375窄版避免grid的min-content怪狀 */
-      padding-left: 16px;
-      padding-right: 16px;
-      height: auto;
-    }
-  
-    /* 讓內容自然堆疊（仍維持你原本排版語意） */
-    .footer__top > *,
-    .footer__bottom > *{
-      width: 100%;
-    }
   
     /* image placeholder不要超寬 */
     .image-blank{
