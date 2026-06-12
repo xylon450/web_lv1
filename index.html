@@ -188,16 +188,18 @@
   </section>
 
   <!-- subscription -->
-  <div id="subscription"></div>
+
+  <div id="subscription-container"></div>
   <script>
     // 使用 fetch 載入 Subscription.html
-    fetch("subscription.html")
+    fetch("Subscription.html")
       .then(response => response.text())
       .then(data => {
-        document.getElementById("subscription").innerHTML = data;
+        document.getElementById("subscription-container").innerHTML = data;
       })
       .catch(error => console.error("載入失敗:", error));
   </script>
+
  
 
         <div class="page">
